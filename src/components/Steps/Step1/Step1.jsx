@@ -19,6 +19,7 @@ export const Step1 = () => {
         setUserData({ ...userData, [name]: value })
         console.log({ [name]: value });
     }
+    console.log(handleChange);
 
     const initialValues = {
         nickname: userData['nickname'],
@@ -40,9 +41,10 @@ export const Step1 = () => {
     return (
         <>
             <Formik
+                enableReinitialize
                 initialValues={initialValues}
                 validationSchema={validatorAddReview}
-                onSubmit={values => { console.log(values) }}
+                onSubmit={handleChange}
             >
                 {({ errors, touched }) => (
                     <Form className={style.container}>
