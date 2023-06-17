@@ -1,0 +1,30 @@
+.btnBox {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btnBack {
+    width: 63px;
+    height: 44px;
+    background-color: white;
+    color: #5558FA;
+    font-weight: 400;
+    font-size: 14px;
+    border: 1.5px solid #5558FA;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btnNext {
+    min-width: 73px;
+    max-width: 103px;
+    height: 44px;
+    color: white;
+    font-weight: 400;
+    font-size: 14px;
+    border-style: none;
+    background-color: #5558FA;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 12px 16px;
+}

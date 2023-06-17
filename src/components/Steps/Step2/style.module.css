@@ -1,0 +1,82 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: auto;
+    margin-top: 66px;
+}
+
+.containerAdvantages {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.lineAdvantages input {
+    -webkit-box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 300px;
+    height: 44px;
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.16);
+    border-radius: 4px;
+    color: rgba(0, 0, 0, 0.48);
+    font-weight: 400;
+    font-size: 14px;
+    padding: 0 12px;
+}
+
+.btnAdd {
+    width: 44px;
+    height: 44px;
+    border: 1.5px solid #5558FA;
+    border-radius: 4px;
+    color: #5558FA;
+    background-color: white;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.btnRemove {
+    background: none;
+    color: inherit;
+    border: none;
+    cursor: pointer;
+    outline: inherit;
+    margin-left: 16px;
+    padding: 0;
+}
+
+.checkboxGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.checkboxGroup p {
+    margin: 0;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.formCheck {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 14px;
+}
+
+.customControl {
+    display: flex;
+    height: 16px;
+    width: 16px;
+    color: #5558FA;
+    accent-color: currentcolor;
+    margin: 0;
+
+}
