@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Stepper } from '../../components/Stepper/Stepper'
 import { StepperControl } from '../../components/StepperControl'
-import { StepperContext } from '../../context/StepperContext'
+import { StepperContext, useData } from '../../context/StepperContext'
 import style from './style.module.css'
 import { Step1 } from '../../components/Steps/Step1/Step1';
 import { Step2 } from '../../components/Steps/Step2/Step2';
@@ -13,6 +13,7 @@ export const Create = () => {
     const [currentStep, setCurrentStep] = useState(0)
     const [userData, setUserData] = useState({});
     const [finalData, setFinalData] = useState([])
+    const { data } = useData()
     const [advantagesList, setAdvantagesList] = useState([{ advantages: "" }]);
     const [isChecked, setIsChecked] = useState({
         one: false,
@@ -36,21 +37,31 @@ export const Create = () => {
                 return <Step2 />
             case 3:
                 return <Step3 />
-            case 4:
-                return <Final />
             default:
         }
     }
 
+    // const fetchData = async () => {
+    //     const req = await fetch('https://api.sbercloud.ru/content/v1/bootcamp/frontend');
+    //     const newData = await req.json();
+    //     return setUserData(newData.results);
+    // };
+
     const handleClick = (direction) => {
         let newStep = currentStep;
+        console.log(newStep);
+        console.log(steps.length - 1);
+        if (newStep === steps.length - 1) {
+            console.log(data);
+        }
 
-        if (currentStep === 0 && direction !== "next") {
+        if (newStep === 0 && direction !== "next") {
             navigate('/')
         }
         direction === "next" ? newStep++ : newStep--;
-        newStep > -1 && newStep <= steps.length && setCurrentStep(newStep)
+        newStep > - 1 && newStep <= steps.length && setCurrentStep(newStep)
     }
+
 
     return (
         <div className={style.container}>

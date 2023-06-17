@@ -19,7 +19,6 @@ export const Step1 = () => {
         setUserData({ ...userData, [name]: value })
         console.log({ [name]: value });
     }
-    console.log(handleChange);
 
     const initialValues = {
         nickname: userData['nickname'],
@@ -30,12 +29,17 @@ export const Step1 = () => {
 
     const validatorAddReview = () => Yup.object({
         nickname: Yup.string()
+            .required('Обязательное поле')
             .max(30, 'Максимальная длина 30 символов')
             .matches(/[a-zA-ZА-яа-я0-9]/g, "Не допускается использование спецсимволов"),
         name1: Yup.string()
-            .required('Обязательное поле'),
+            .required('Обязательное поле')
+            .max(50, 'Максимальная длина 50 символов')
+            .matches(/[a-zA-ZА-яа-я]/g, "Допускается только использование букв"),
         sername: Yup.string()
-            .required('Обязательное поле'),
+            .required('Обязательное поле')
+            .max(50, 'Максимальная длина 50 символов')
+            .matches(/[a-zA-ZА-яа-я]/g, "Допускается только использование букв"),
     })
 
     return (
