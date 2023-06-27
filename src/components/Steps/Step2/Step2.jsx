@@ -7,6 +7,8 @@ import trash from './trash.svg'
 export const Step2 = () => {
     const { advantagesList, setAdvantagesList, isChecked, setIsChecked, isRadio, setIsRadio } = useContext(StepperContext)
 
+
+
     const handleAdvantagesChange = (e, index) => {
         const { name, value } = e.target;
         const list = [...advantagesList];

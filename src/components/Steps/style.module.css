@@ -1,0 +1,197 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: auto;
+    margin-top: 67px;
+}
+
+.container>label {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #333333;
+    margin-bottom: 8px;
+}
+
+.input {
+    -webkit-box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 300px;
+    height: 44px;
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.16);
+    border-radius: 4px;
+    color: rgba(0, 0, 0, 0.48);
+    font-weight: 400;
+    font-size: 14px;
+    padding: 0 12px !important;
+}
+
+.select {
+    -webkit-box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 300px;
+    height: 44px;
+    background: #FFFFFF;
+    border-radius: 4px;
+    margin-bottom: 48px;
+    color: rgba(0, 0, 0, 0.48);
+    font-weight: 400;
+    font-size: 14px;
+    padding: 0 12px !important;
+    background: url(apperance.svg) no-repeat right;
+    background-position-x: calc(100% - 12px);
+}
+
+.select svg {
+    opacity: 0;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.field>p {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    color: rgba(0, 0, 0, 0.48);
+    margin: 0;
+}
+
+#field-sex {
+    padding: 0;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    font-style: normal !important;
+    color: rgba(0, 0, 0, 0.48);
+}
+
+#field-sex>p {
+    margin: 0;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.formControl {
+    margin: 0 !important;
+}
+
+.option,
+.option>p {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    font-style: normal;
+    color: rgba(0, 0, 0, 0.48);
+    margin: 0;
+}
+
+/* Section 2*/
+
+.containerAdvantages {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.lineAdvantages>input {
+    -webkit-box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 300px;
+    height: 44px;
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.16);
+    border-radius: 4px;
+    color: rgba(0, 0, 0, 0.48);
+    font-weight: 400;
+    font-size: 14px;
+    padding: 0 12px;
+}
+
+.lineAdvantages>p {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    color: rgba(0, 0, 0, 0.48);
+    margin: 8px 0 0 0;
+}
+
+.btnAdd {
+    width: 44px;
+    height: 44px;
+    border: 1.5px solid #5558FA;
+    border-radius: 4px;
+    color: #5558FA;
+    background-color: white;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.btnRemove {
+    background: none;
+    color: inherit;
+    border: none;
+    cursor: pointer;
+    outline: inherit;
+    margin-left: 16px;
+    padding: 0;
+}
+
+.checkboxGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.checkboxGroup>p {
+    margin: 0;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.formCheck {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 14px;
+}
+
+.customControl {
+    display: flex;
+    height: 16px;
+    width: 16px;
+    color: #5558FA;
+    accent-color: currentcolor;
+    margin: 0;
+
+}
+
+/* Section 3*/
+
+.textarea {
+    display: flex;
+    flex-direction: column;
+    background: #FFFFFF;
+    gap: 8px;
+}
+
+.textarea>textarea {
+    border-style: none;
+    border: 1px solid rgba(0, 0, 0, 0.16);
+    border-radius: 5px;
+    min-height: 84px;
+}

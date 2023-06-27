@@ -1,4 +1,3 @@
 import { createContext, useContext } from "react";
 
 export const StepperContext = createContext(null)
-export const useData = () => useContext(StepperContext)
