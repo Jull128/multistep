@@ -1,13 +1,34 @@
 import React, { useEffect, useState } from 'react'
 import { Field, ErrorMessage, useFormik, FieldArray } from 'formik'
 import style from './style.module.css'
-import { FormControl, MenuItem, Select } from '@mui/material'
+import { FormControl, InputLabel, MenuItem, Select } from '@mui/material'
 import plus from './Plus.svg'
 import trash from './trash.svg'
 
 //https://api.sbercloud.ru/content/v1/bootcamp/frontend
 
-export const FormItem = ({ item, name, value }) => {
+export const FormItem = ({ item, name, value, answers, setAnswers }) => {
+    const handler = (e) => {
+        setAnswers(e.target.value)
+    }
+
+    const CustomizedSelectForFormik = ({ children, form, field }) => {
+        const { name, value } = field;
+        const { setFieldValue } = form;
+
+        return (
+            <Select
+                name={name}
+                value={value}
+                onChange={e => {
+                    setFieldValue(name, e.target.value);
+                }}
+            >
+                {children}
+            </Select>
+        );
+    };
+
 
     switch (item.type) {
 
@@ -32,24 +53,13 @@ export const FormItem = ({ item, name, value }) => {
         case 'select':
             return (
                 <div className={style.field}>
-                    <label htmlFor='field-sex'>Sex
-
-                        <Field
-                            component="select"
-                            className={style.select}
-                            id={style['field-sex']}
-                            name="sex"
-                        >
-                            <option className={style.option} value="NY">New York</option>
-                            <option className={style.option} value="SF">San Francisco</option>
-                            <option className={style.option} value="CH">Chicago</option>
-                        </Field>
-                    </label>
+                    <label htmlFor='field-sex'>Sex </label>
 
                     <FormControl className={style.formControl} sx={{ m: 1, minWidth: 120 }} color='grey' name='sex'>
                         <Select
                             className={style.select}
                             id={style['field-sex']}
+                            onChange={handler}
                             displayEmpty
                             defaultValue=''
                         >
@@ -59,6 +69,12 @@ export const FormItem = ({ item, name, value }) => {
                             <MenuItem className={style.option} value={"man"}>man</MenuItem>
                             <MenuItem className={style.option} value={"woman"}>woman</MenuItem>
                         </Select>
+                    </FormControl>
+                    <FormControl>
+                        <Field name="sex" component={CustomizedSelectForFormik}>
+                            <MenuItem value={60}>01</MenuItem>
+                            <MenuItem value={120}>02</MenuItem>
+                        </Field>
                     </FormControl>
                 </div>
             )

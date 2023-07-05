@@ -7,7 +7,7 @@ import { ValidationSchemaFormTwo, initialValuesFormTwo } from '../ValidationSche
 import { useEffect } from 'react'
 
 export const Multistep = (props) => {
-    const [answers, setAnswers] = useState([])
+
 
     const formik = useFormik({
         initialValues: initialValuesFormTwo,
@@ -17,6 +17,9 @@ export const Multistep = (props) => {
         ,
 
     })
+
+    const [answers, setAnswers] = useState(formik.values.sex)
+    console.log(answers);
 
     useEffect(() => {
         const storage = localStorage.getItem('wizard');
@@ -39,7 +42,7 @@ export const Multistep = (props) => {
                 {
                     props.list[props.step].items?.map((item, currentStep) => {
                         return (
-                            <FormItem key={item.label} item={item} name={item.label} value={formik.values} >
+                            <FormItem key={item.label} answers={answers} setAnswers={setAnswers} item={item} name={item.label} value={formik.values} >
 
                             </FormItem>
                         )
