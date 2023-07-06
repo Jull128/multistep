@@ -54,7 +54,7 @@ export const FormItem = ({ item, name, value, answers, setAnswers }) => {
             return (
                 <div className={style.field}>
                     <label htmlFor='field-sex'>Sex </label>
-
+                    {/* 
                     <FormControl className={style.formControl} sx={{ m: 1, minWidth: 120 }} color='grey' name='sex'>
                         <Select
                             className={style.select}
@@ -69,11 +69,20 @@ export const FormItem = ({ item, name, value, answers, setAnswers }) => {
                             <MenuItem className={style.option} value={"man"}>man</MenuItem>
                             <MenuItem className={style.option} value={"woman"}>woman</MenuItem>
                         </Select>
-                    </FormControl>
-                    <FormControl>
-                        <Field name="sex" component={CustomizedSelectForFormik}>
-                            <MenuItem value={60}>01</MenuItem>
-                            <MenuItem value={120}>02</MenuItem>
+                    </FormControl> */}
+                    <FormControl className={style.formControl} sx={{ m: 1, minWidth: 120 }} color='grey' name='sex'>
+                        <Field
+                            className={style.select}
+                            id={style['field-sex']}
+                            name="sex"
+                            component={CustomizedSelectForFormik}
+                            displayEmpty
+                            defaultValue={""}>
+                            <MenuItem className={style.option} value={""} disabled selected>
+                                <p>Не выбрано</p>
+                            </MenuItem>
+                            <MenuItem value={"man"}>man</MenuItem>
+                            <MenuItem value={"woman"}>woman</MenuItem>
                         </Field>
                     </FormControl>
                 </div>

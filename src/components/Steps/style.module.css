@@ -66,6 +66,7 @@
 }
 
 #field-sex {
+    appearance: none;
     padding: 0;
     font-weight: 400;
     font-size: 14px;
@@ -83,6 +84,24 @@
 
 .formControl {
     margin: 0 !important;
+    width: 300px;
+    height: 44px;
+    background: #FFFFFF;
+}
+
+.formControl svg {
+    opacity: 0;
+}
+
+.formControl>div {
+    margin: 0 !important;
+    width: 300px;
+    height: 44px;
+    color: rgba(0, 0, 0, 0.48);
+    font-weight: 400;
+    font-size: 14px;
+    background: url(apperance.svg) no-repeat right;
+    background-position-x: calc(100% - 12px);
 }
 
 .option,
