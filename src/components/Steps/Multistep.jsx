@@ -8,6 +8,9 @@ import { useEffect } from 'react'
 
 export const Multistep = (props) => {
 
+    // if (all) {
+    //     console.log(all);
+    // }
 
     const formik = useFormik({
         initialValues: initialValuesFormTwo,
@@ -19,7 +22,7 @@ export const Multistep = (props) => {
     })
 
     const [answers, setAnswers] = useState(formik.values.sex)
-    console.log(answers);
+    // console.log(answers);
 
     useEffect(() => {
         const storage = localStorage.getItem('wizard');
@@ -35,6 +38,23 @@ export const Multistep = (props) => {
         localStorage.setItem('wizard', JSON.stringify(formik.values))
     }, [formik.values])
 
+    const form = window.localStorage.getItem('form')
+    // const prepairedForm = form ? JSON.parse(form) : []
+    const wizard = window.localStorage.getItem('wizard')
+    // const prepairedWizard = wizard ? JSON.parse(wizard) : []
+
+    useEffect(() => {
+        const prepairedForm = form ? JSON.parse(form) : []
+        const prepairedWizard = wizard ? JSON.parse(wizard) : []
+        if (prepairedForm, prepairedWizard) {
+            const all = Object.assign(prepairedForm, prepairedWizard)
+            // console.log(all);
+        }
+    }, [wizard, form])
+    // if (prepairedForm, prepairedWizard) {
+    //     const all = Object.assign(prepairedForm, prepairedWizard)
+    //     console.log(all);
+    // }
 
     return (
         <FormikProvider value={formik} >
