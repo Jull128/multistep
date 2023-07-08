@@ -22,7 +22,7 @@ export const Multistep = (props) => {
                         )
                     })
                 }
-                <pre>{JSON.stringify(props.formik.values, props.formik.errors, null, 4)}</pre>
+                {/* <pre>{JSON.stringify(props.formik.values, props.formik.errors, null, 4)}</pre> */}
             </Form>
         </FormikProvider>
     )
