@@ -2,8 +2,12 @@ import React from 'react'
 import style from './style.module.css'
 import { useNavigate } from 'react-router-dom';
 import { useMutation } from '@tanstack/react-query';
+import { Modal } from './Modal/Modal';
+import { Final } from './Steps/Final/Final';
+import { useState } from 'react';
+import { FinalError } from './Steps/Final/FinalError';
 
-export function StepperControl({ setCurrentStep, currentStep, steps }) {
+export function StepperControl({ setCurrentStep, currentStep, steps, isFinal, setIsFinal, isFinalError, setIsFinalError, handleSubmit }) {
 
     const navigate = useNavigate()
 
@@ -21,35 +25,6 @@ export function StepperControl({ setCurrentStep, currentStep, steps }) {
     }
 
 
-    // async function sendForm() {
-    //     const res = await fetch(`${this.url}/signup`, {
-    //         method: 'POST',
-    //         headers: {
-    //             'Accept': 'application/json',
-    //             'Content-Type': 'application/json',
-    //         },
-    //         body: JSON.stringify(values)
-    //     });
-
-    //     if (res.status === 409) {
-    //         throw new Error('Юзер с указанным email уже существует');
-    //     }
-    //     if (res.status === 400) {
-    //         throw new Error('Некорректно заполнено одно из полей');
-    //     }
-    //     if (res.status >= 300) {
-    //         throw new Error(`Ошибка, код ${res.status}`);
-    //     }
-    // }
-
-    // const { mutateAsync, isLoading, isError, error } = useMutation({
-    //     mutationFn: (values) => sendForm(values),
-    // })
-
-    // const submitHandler = async (values) => {
-    //     await mutateAsync(values)
-    //     navigate('/')
-    // }
 
     return (
         <div className={style.btnBox}>
@@ -57,14 +32,24 @@ export function StepperControl({ setCurrentStep, currentStep, steps }) {
 
                 onClick={() => handleClick()}
                 className={style.btnBack}>Назад</button>
-            {(currentStep <= steps.length - 1) ? (
+            {(currentStep <= steps?.length - 1) ? (
                 <button
 
-                    onClick={() => handleClick('next')}
+                    onClick={
+                        currentStep === steps?.length - 1 ? handleSubmit :
+                            () => handleClick('next')}
                     className={style.btnNext}>
                     {currentStep === steps.length - 1 ? "Отправить" : "Далее"}
                 </button>) : ''
             }
+            <Final
+                isFinal={isFinal}
+                setIsFinal={setIsFinal}
+            />
+            <FinalError
+                isFinalError={isFinalError}
+                setIsFinalError={setIsFinalError}
+            />
         </div>
     )
 }

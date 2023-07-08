@@ -46,9 +46,9 @@ export const Main = () => {
                     <div className={style.description}>
                         <p>Юлия Перелыгина</p>
                         <ul className={style.list}>
-                            <li><img src={folder} /><a href='https://t.me/Lula_Pe'>Telegram</a></li>
-                            <li><img src={folder} /><a href='https://t.me/Lula_Pe'>GitHub</a></li>
-                            <li><img src={folder} /><a href='https://t.me/Lula_Pe'>Resume</a></li>
+                            <li><img src={folder} /><a href='https://t.me/Lula_Pe' target='_blank'>Telegram</a></li>
+                            <li><img src={folder} /><a href='https://github.com/Jull128' target='_blank'>GitHub</a></li>
+                            <li><img src={folder} /><a href='https://t.me/Lula_Pe' target='_blank'>Resume</a></li>
                         </ul>
                     </div>
 

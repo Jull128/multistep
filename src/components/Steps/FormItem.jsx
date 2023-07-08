@@ -7,10 +7,7 @@ import trash from './trash.svg'
 
 //https://api.sbercloud.ru/content/v1/bootcamp/frontend
 
-export const FormItem = ({ item, name, value, answers, setAnswers }) => {
-    const handler = (e) => {
-        setAnswers(e.target.value)
-    }
+export const FormItem = ({ item, name, value }) => {
 
     const CustomizedSelectForFormik = ({ children, form, field }) => {
         const { name, value } = field;
@@ -54,22 +51,6 @@ export const FormItem = ({ item, name, value, answers, setAnswers }) => {
             return (
                 <div className={style.field}>
                     <label htmlFor='field-sex'>Sex </label>
-                    {/* 
-                    <FormControl className={style.formControl} sx={{ m: 1, minWidth: 120 }} color='grey' name='sex'>
-                        <Select
-                            className={style.select}
-                            id={style['field-sex']}
-                            onChange={handler}
-                            displayEmpty
-                            defaultValue=''
-                        >
-                            <MenuItem className={style.option} value="" disabled selected>
-                                <p>Не выбрано</p>
-                            </MenuItem>
-                            <MenuItem className={style.option} value={"man"}>man</MenuItem>
-                            <MenuItem className={style.option} value={"woman"}>woman</MenuItem>
-                        </Select>
-                    </FormControl> */}
                     <FormControl className={style.formControl} sx={{ m: 1, minWidth: 120 }} color='grey' name='sex'>
                         <Field
                             className={style.select}

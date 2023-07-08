@@ -18,12 +18,8 @@ function ModalContent({ children, closeHandler }) {
         };
     }, [closeHandler]);
 
-
-    const closeModalByClickButtonX = () => closeHandler()
-
     return (
-        <div className={style.modalContent}>
-            <button onClick={closeModalByClickButtonX} className={style.modalCloseBtn} type="button">&#10006;</button>
+        <div className={style.modalContent} >
             {children}
         </div>
     );
@@ -39,7 +35,7 @@ export function Modal({ closeHandler, isOpen, children }) {
 
     return createPortal(
         <div className={style.modalWrapper} onMouseDown={clickHandler}>
-            <ModalContent closeHandler={closeHandler}>
+            <ModalContent >
                 {children}
             </ModalContent>
         </div>,
